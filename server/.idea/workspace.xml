@@ -1,31 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="dcc0938d-f5c9-4c64-b729-62e925a9b677" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/file1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/file2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/Listener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/MulticastReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/UDPClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UDPServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/input.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/out/production/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../client/out/production/client/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/ClientHandler.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/server/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/server/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/User.java" beforeDir="false" />
-    </list>
+    <list default="true" id="dcc0938d-f5c9-4c64-b729-62e925a9b677" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -42,6 +18,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
   <component name="ProjectCodeStyleSettingsMigration">
@@ -108,8 +89,16 @@
       <workItem from="1639424756669" duration="1966000" />
       <workItem from="1639848709901" duration="2536000" />
       <workItem from="1640003237855" duration="7922000" />
-      <workItem from="1640023300079" duration="8882000" />
+      <workItem from="1640023300079" duration="9210000" />
     </task>
+    <task id="LOCAL-00001" summary="implement by udp">
+      <created>1640033002744</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640033002744</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,6 +115,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="implement by udp" />
+    <option name="LAST_COMMIT_MESSAGE" value="implement by udp" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
