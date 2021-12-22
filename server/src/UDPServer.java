@@ -1,17 +1,17 @@
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class UDPServer {
     private static final Integer PORT = 5050;
     private final String group = "230.0.0.0";
     private DatagramSocket datagramSocket;
-    private final ArrayList<DatagramPacket> receivedPackets = new ArrayList<>();
-    private final ArrayList<Thread> threads = new ArrayList<>();
+    private final List<DatagramPacket> receivedPackets = new ArrayList<>();
+    private final List<Thread> threads = new ArrayList<>();
     private static AtomicInteger voiceReceivedCount = new AtomicInteger(Main.SENDER_COUNT);
 
     public void allVoiceReceived() {
@@ -87,7 +87,7 @@ public class UDPServer {
 
     public void printFiles() {
 
-        FileOutputStream outputStream = null;
+        FileOutputStream outputStream;
         try {
             outputStream = new FileOutputStream("fileee.json");
             outputStream.write(receivedPackets.get(0).getData());

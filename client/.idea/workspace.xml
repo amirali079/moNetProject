@@ -2,29 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bf94ab87-7bc2-400f-b58c-37b2f0c5a53d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file1.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/file2.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Listener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/MulticastReceiver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/UDPClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../server/src/UDPServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/input.json" beforeDir="false" afterPath="$PROJECT_DIR$/input.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/client/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/client/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/result1.json" beforeDir="false" afterPath="$PROJECT_DIR$/result1.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ClientHandler.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/ClientHandler.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/fileee.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/fileii.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/ClientHandler.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../server/out/production/server/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/out/production/server/User.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/ClientHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/ClientHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../server/src/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/out/production/server/UDPServer.class" beforeDir="false" afterPath="$PROJECT_DIR$/../server/out/production/server/UDPServer.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/person0.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/person1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/ClientHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server/src/UDPServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../server/src/UDPServer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,13 +52,21 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../server" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/apache-commons-net.jar" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/lib" />
+    </key>
   </component>
   <component name="RunManager" selected="Application.Main">
     <configuration name="Listener" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -82,13 +83,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
       <option name="arquillianRunConfiguration">
         <value>
           <option name="containerStateName" value="" />
         </value>
       </option>
-      <option name="TEST_OBJECT" value="class" />
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -114,6 +117,7 @@
       <workItem from="1639424775228" duration="1339000" />
       <workItem from="1639848693424" duration="2730000" />
       <workItem from="1640003258149" duration="15320000" />
+      <workItem from="1640181473088" duration="3572000" />
     </task>
     <servers />
   </component>
@@ -130,5 +134,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

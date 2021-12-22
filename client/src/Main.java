@@ -8,7 +8,7 @@ public class Main {
     public static void main(String[] args) {
 
         UDPClient udpClient = new UDPClient();
-        udpClient.init(5051);
+        udpClient.init(5052);
         udpClient.sendVoice();
 
     }
