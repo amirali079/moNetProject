@@ -2,17 +2,17 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.net.*;
 import java.nio.ByteBuffer;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
 public class UDPServer {
     private static final Integer PORT = 5050;
-    private final String group = "230.0.0.0";
     private DatagramSocket datagramSocket;
     private final List<DatagramPacket> receivedPackets = new ArrayList<>();
-    private final List<Thread> threads = new ArrayList<>();
-    private static AtomicInteger voiceReceivedCount = new AtomicInteger(Main.SENDER_COUNT);
+    private final List<Delay> delays = new ArrayList<>();
+    private static final AtomicInteger voiceReceivedCount = new AtomicInteger(Main.SENDER_COUNT);
 
     public void allVoiceReceived() {
         if (voiceReceivedCount.get() != 0) {
@@ -23,6 +23,7 @@ public class UDPServer {
             }
             allVoiceReceived();
         }
+        calculateAbnormalDelays();
     }
 
     public void startUDPServer() {
@@ -38,48 +39,44 @@ public class UDPServer {
         Thread thread;
         for (int i = 0; i < Main.SENDER_COUNT; i++) {
             thread = new Thread(this::listenToClients);
-            threads.add(thread);
             thread.start();
         }
     }
 
     public void listenToClients() {
+
         byte[] bytes = new byte[Main.FILE_SIZE * 1024];
         DatagramPacket packet = new DatagramPacket(bytes, bytes.length);
         receivedPackets.add(packet);
 
         try {
+            long start = System.currentTimeMillis();
             datagramSocket.receive(packet);
-//            receivedPackets.forEach(packet1 -> System.out.println(packet1.getData()));
-//            System.out.println(Thread.currentThread().getName());
+            delays.add(new Delay(System.currentTimeMillis() - start, packet.getAddress().getHostAddress(), packet.getPort()));
         } catch (IOException e) {
             e.printStackTrace();
         }
         voiceReceivedCount.decrementAndGet();
-
     }
 
     public void integrateVoices() {
-        System.out.println(receivedPackets.size());
 //        printFiles();
         ByteBuffer byteBuffer;
         for (int i = 0; i < Main.FILE_SIZE * 1024; i++) {
             byteBuffer = ByteBuffer.allocate(Main.SENDER_COUNT);
-            for (int j = 0; j < receivedPackets.size(); j++) {
-                byteBuffer.put(receivedPackets.get(j).getData()[i]);
+            for (DatagramPacket receivedPacket : receivedPackets) {
+                byteBuffer.put(receivedPacket.getData()[i]);
             }
             publishVoices(byteBuffer.array());
         }
         System.out.println("data sent");
-//        receivedPackets.forEach(packet -> byteBuffer.put(packet.getData()));
     }
 
     public void publishVoices(byte[] buffer) {
         try {
+            String group = "230.0.0.0";
             DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length, InetAddress.getByName(group), 10000);
             datagramSocket.send(datagramPacket);
-        } catch (UnknownHostException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,6 +94,29 @@ public class UDPServer {
             e.printStackTrace();
         }
 
+    }
+
+    private void calculateAbnormalDelays() {
+        long sum = 0L;
+        for (Delay delay : delays)
+            sum += delay.getDelay();
+        long avg = sum / Main.SENDER_COUNT;
+
+        for (Delay delay : delays)
+            if (delay.getDelay() > avg + 10000)
+                sendFeedback(delay);
+
+    }
+
+    private void sendFeedback(Delay delay) {
+        byte[] bytes = "check your internet state".getBytes(StandardCharsets.UTF_8);
+        try {
+            DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length,
+                    InetAddress.getByName(delay.getHostAddress()), delay.getHostPort());
+            datagramSocket.send(datagramPacket);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
 }

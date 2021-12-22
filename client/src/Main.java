@@ -1,6 +1,6 @@
 public class Main {
 
-    public static final String SENDING_FILE_NAME = "file1.json";
+    public static final String SENDING_FILE_NAME = "file2.json";
     public static final String RECEIVED_FILE_NAME = "result1.json";
 
     public static final int fileSize = 10;

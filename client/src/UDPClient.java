@@ -5,11 +5,12 @@ import java.net.InetAddress;
 import java.net.SocketException;
 
 public class UDPClient {
-    DatagramSocket datagramSocket;
+    private DatagramSocket datagramSocket;
 
-    public void init(int port){
+    public void init(int port) {
         try {
             datagramSocket = new DatagramSocket(port);
+            new Thread(this::listenToFeedBack).start();
         } catch (SocketException e) {
             e.printStackTrace();
         }
@@ -26,11 +27,23 @@ public class UDPClient {
 
             DatagramPacket datagramPacket = new DatagramPacket(bytes, bytes.length, InetAddress.getByName("127.0.0.1"), 5050);
             datagramSocket.send(datagramPacket);
+            Thread.sleep(15000);
 
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    private void listenToFeedBack() {
+        byte[] buffer = new byte[25];
+        DatagramPacket datagramPacket = new DatagramPacket(buffer, buffer.length);
+        try {
+            datagramSocket.receive(datagramPacket);
+            System.out.println(new String(datagramPacket.getData()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
     }
 }
